@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 interface ThemeProviderProps {
   theme: string;
@@ -13,10 +13,10 @@ export default function ThemeProvider({ theme, children }: ThemeProviderProps) {
       if (!theme) {
         return;
       }
-      localStorage.setItem("theme", theme);
-      document.querySelector("html")?.setAttribute("data-theme", theme);
+      localStorage.setItem('theme', theme);
+      document.querySelector('html')?.setAttribute('data-theme', theme);
     },
-    [theme]
+    [theme],
   );
 
   return <>{children}</>;

@@ -1,34 +1,26 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import ThemeProvider from "./provider";
+import { useState } from 'react';
+import ThemeProvider from './provider';
+
+import Buttons from './components/Buttons';
+import Content from './components/Content';
 
 export default function Home() {
-  const [theme, setTheme] = useState<string>(localStorage.getItem("theme") ?? "");
+  const [theme, setTheme] = useState<string>(localStorage.getItem('theme') ?? '');
 
   return (
     <ThemeProvider theme={theme}>
-      <main className="flex min-h-screen flex-col items-center justify-center gap-[30px] p-24 bg-primary dark:bg-blue-500">
-        <button
-          type="button"
-          className="bg-primary text-secondary border border-[#dddd] p-[4px]"
-          onClick={() => {
-            setTheme("dark");
-          }}
-        >
-          Dark theme
-        </button>
+      <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
+        <div className="absolute inset-0 bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
 
-        <button
-          type="button"
-          className="bg-primary text-secondary border border-[#dddd] p-[4px]"
-          onClick={() => {
-            setTheme("second");
-          }}
-        >
-          Second theme
-        </button>
-      </main>
+        <div className="relative bg-white px-6 pt-10 pb-10 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
+          <div className="mx-auto max-w-md">
+            <Content />
+            <Buttons setTheme={setTheme} />
+          </div>
+        </div>
+      </div>
     </ThemeProvider>
   );
 }
