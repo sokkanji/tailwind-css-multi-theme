@@ -1,10 +1,7 @@
-'use client';
+import ThemeProvider from '../provider';
+import SecondContent from './components/SecondContent';
 
-import Buttons from './components/Buttons';
-import Content from './components/FirstContent';
-import ThemeProvider from './provider';
-
-export default function MainPage() {
+export default function SecondPage() {
   return (
     <ThemeProvider>
       <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
@@ -12,15 +9,7 @@ export default function MainPage() {
 
         <div className="relative bg-white px-6 pt-10 pb-10 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
           <div className="mx-auto max-w-md">
-            <Content />
-            <Buttons />
-          </div>
-          <div className="pt-8 text-base font-semibold leading-7 border-t border-[#e9e9e9e9]">
-            <p>
-              <a href="/second" className="text-primary">
-                두번째 페이지로 이동 &rarr;
-              </a>
-            </p>
+            <SecondContent />
           </div>
         </div>
       </div>

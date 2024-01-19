@@ -1,23 +1,28 @@
 'use client';
 
-import { useEffect } from 'react';
+import { ThemeContext } from '@/contextAPI/contextAPI';
+import { useEffect, useState } from 'react';
 
 interface ThemeProviderProps {
-  theme: string;
   children: React.ReactNode;
 }
 
-export default function ThemeProvider({ theme, children }: ThemeProviderProps) {
+export default function ThemeProvider({ children }: ThemeProviderProps) {
+  const [theme, setTheme] = useState<string>(localStorage.getItem('theme') ?? 'blue');
+
+  useEffect(function initialize() {
+    document
+      .querySelector('html')
+      ?.setAttribute('data-theme', localStorage.getItem('theme') ?? 'blue');
+  }, []);
+
   useEffect(
     function handleLocalStorageTheme() {
-      if (!theme) {
-        return;
-      }
       localStorage.setItem('theme', theme);
       document.querySelector('html')?.setAttribute('data-theme', theme);
     },
     [theme],
   );
 
-  return <>{children}</>;
+  return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
 }

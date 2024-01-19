@@ -1,16 +1,18 @@
+import React from 'react';
+
 export default function CheckList() {
   const textList = [
-    <p className="ml-4">
+    <>
       <code className="text-sm font-bold text-gray-900">global.css</code>에 스타일 변수 선언하기
-    </p>,
-    <p className="ml-4">
+    </>,
+    <>
       <code className="text-sm font-bold text-gray-900">tailwind.config.ts</code>에 스타일 변수
       선언하기
-    </p>,
-    <p className="ml-4">스타일 변수로 컴포넌트에 스타일 작성하기</p>,
-    <p className="ml-4">
+    </>,
+    <>스타일 변수로 컴포넌트에 스타일 작성하기</>,
+    <>
       <code className="text-sm font-bold text-gray-900">localStorage</code>를 이용해서 테마 저장하기
-    </p>,
+    </>,
   ];
 
   return (
@@ -26,7 +28,7 @@ export default function CheckList() {
               <circle cx="12" cy="12" r="11" />
               <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
             </svg>
-            {item}
+            <p className="ml-4">{item}</p>
           </li>
         );
       })}
