@@ -15,10 +15,10 @@ export default function MainPage() {
             <Content />
             <Buttons />
           </div>
-          <div className="pt-8 text-base font-semibold leading-7 border-t border-[#e9e9e9e9]">
+          <div className="pt-8 text-base font-semibold leading-7">
             <p>
               <a href="/second" className="text-primary">
-                두번째 페이지로 이동 &rarr;
+                두 번째 페이지로 이동하기 &rarr;
               </a>
             </p>
           </div>

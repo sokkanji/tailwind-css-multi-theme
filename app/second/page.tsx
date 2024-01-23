@@ -1,3 +1,5 @@
+'use client';
+
 import ThemeProvider from '../provider';
 import SecondContent from './components/SecondContent';
 
