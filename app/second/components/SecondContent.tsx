@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function SecondContent() {
   return (
     <div className="divide-y divide-gray-300/50">
@@ -8,9 +10,9 @@ export default function SecondContent() {
 
         <div className="pt-8 text-base font-semibold leading-7 border-t border-[#e9e9e9e9]">
           <p>
-            <a href="/" className="text-primary">
+            <Link href="/" className="text-primary">
               메인 페이지로 돌아가기 &rarr;
-            </a>
+            </Link>
           </p>
         </div>
       </div>

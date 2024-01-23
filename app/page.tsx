@@ -1,7 +1,8 @@
 'use client';
 
+import Link from 'next/link';
 import Buttons from './components/Buttons';
-import Content from './components/FirstContent';
+import MainContent from './components/MainContent';
 import ThemeProvider from './provider';
 
 export default function MainPage() {
@@ -12,14 +13,14 @@ export default function MainPage() {
 
         <div className="relative bg-white px-6 pt-10 pb-10 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
           <div className="mx-auto max-w-md">
-            <Content />
+            <MainContent />
             <Buttons />
           </div>
           <div className="pt-8 text-base font-semibold leading-7">
             <p>
-              <a href="/tailwind-css-multiple-theme/second" className="text-primary">
+              <Link href="/second" className="text-primary">
                 두 번째 페이지로 이동하기 &rarr;
-              </a>
+              </Link>
             </p>
           </div>
         </div>

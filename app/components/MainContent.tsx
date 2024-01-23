@@ -1,6 +1,6 @@
 import CheckList from './CheckLIst';
 
-export default function Content() {
+export default function MainContent() {
   return (
     <div className="divide-y divide-gray-300/50">
       <div className="space-y-6 py-4 text-base leading-7 text-gray-600">
