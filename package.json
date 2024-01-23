@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.io/sokkanji/tailwind-css-multiple-theme",
   "name": "tailwind-css-multiple-theme",
   "version": "0.1.0",
   "private": true,
@@ -6,9 +7,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "@svgr/webpack": "^8.1.0",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18"
@@ -20,6 +23,7 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
+    "gh-pages": "^6.1.1",
     "postcss": "^8",
     "prettier-plugin-tailwindcss": "^0.5.10",
     "tailwindcss": "^3.3.0",
