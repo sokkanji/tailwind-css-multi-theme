@@ -17,7 +17,7 @@ export default function MainPage() {
           </div>
           <div className="pt-8 text-base font-semibold leading-7">
             <p>
-              <a href="/second" className="text-primary">
+              <a href="/tailwind-css-multiple-theme/second" className="text-primary">
                 두 번째 페이지로 이동하기 &rarr;
               </a>
             </p>

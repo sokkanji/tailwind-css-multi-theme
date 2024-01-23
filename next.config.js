@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   basePath: '/tailwind-css-multiple-theme',
+  output: 'export',
+  experimental: {
+    appDir: true,
+  },
 
   webpack: config => {
     config.module.rules.push({
