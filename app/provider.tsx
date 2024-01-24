@@ -31,7 +31,7 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
   );
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ setTheme }}>
       {theme === '' ? <Loading /> : children};
     </ThemeContext.Provider>
   );
