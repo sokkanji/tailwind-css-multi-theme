@@ -4,7 +4,7 @@ export default function SecondContent() {
   return (
     <div className="divide-y divide-gray-300/50">
       <div className="space-y-6 py-4 text-base leading-7 text-gray-600">
-        <h2 className="text-3xl text-primary">두번째 페이지</h2>
+        <h2 className="text-3xl text-primary">두 번째 페이지</h2>
 
         <p>provider를 사용하여 선택한 테마를 여러 페이지에 적용할 수 있습니다.</p>
 

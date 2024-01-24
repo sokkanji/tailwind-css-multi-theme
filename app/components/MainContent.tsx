@@ -3,7 +3,7 @@ import CheckList from './CheckLIst';
 export default function MainContent() {
   return (
     <div className="divide-y divide-gray-300/50">
-      <div className="space-y-6 py-4 text-base leading-7 text-gray-600">
+      <div className="space-y-8 py-4 text-base leading-7 text-gray-600">
         <h2 className="text-3xl text-primary">커스텀 테마 3가지 이상 구현하기</h2>
 
         <CheckList />

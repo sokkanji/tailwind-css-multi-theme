@@ -19,7 +19,7 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
   }, []);
 
   useEffect(
-    function handleLocalStorageTheme() {
+    function handleChangedTheme() {
       if (!theme) {
         return;
       }
