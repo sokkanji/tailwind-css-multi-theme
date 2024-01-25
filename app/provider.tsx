@@ -13,12 +13,8 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
 
   useEffect(function initialize() {
     const storedTheme = localStorage.getItem('theme') ?? '';
-
     setTheme(storedTheme);
-
-    if (storedTheme !== '') {
-      document.querySelector('html')?.setAttribute('data-theme', storedTheme);
-    }
+    document.querySelector('html')?.setAttribute('data-theme', storedTheme);
   }, []);
 
   useEffect(
