@@ -9,9 +9,9 @@ export default function Buttons() {
       <button
         type="button"
         className="bg-[#e0f2fe] text-[#0ea5e9] p-[5px]"
-        onClick={() => context?.setTheme('blue')}
+        onClick={() => context?.setTheme('')}
       >
-        Blue theme
+        Blue theme (default)
       </button>
 
       <button

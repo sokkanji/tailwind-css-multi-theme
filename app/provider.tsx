@@ -9,17 +9,25 @@ interface ThemeProviderProps {
 }
 
 export default function ThemeProvider({ children }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<string>('');
+  const [theme, setTheme] = useState<string | null>(null);
 
   useEffect(function initialize() {
-    const storedTheme = localStorage.getItem('theme') ?? 'blue';
+    const storedTheme = localStorage.getItem('theme') ?? '';
     setTheme(storedTheme);
-    document.querySelector('html')?.setAttribute('data-theme', storedTheme);
+
+    if (storedTheme !== '') {
+      document.querySelector('html')?.setAttribute('data-theme', storedTheme);
+    }
   }, []);
 
   useEffect(
     function handleChangedTheme() {
-      if (!theme) {
+      if (theme === null) {
+        return;
+      }
+
+      if (theme === '') {
+        localStorage.removeItem('theme');
         return;
       }
 
@@ -29,7 +37,7 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
     [theme],
   );
 
-  if (theme === '') {
+  if (theme === null) {
     return <Loading />;
   }
 
