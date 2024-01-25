@@ -1,27 +1,50 @@
 'use client';
 
-import Link from 'next/link';
 import Buttons from './components/Buttons';
-import MainContent from './components/MainContent';
+import CheckList from './components/CheckLIst';
+import Wrapper from './components/Wrapper';
+import Link from 'next/link';
 
 export default function MainPage() {
-  return (
-    <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
-      <div className="absolute inset-0 bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+  const textList = [
+    <>
+      <code className="text-sm font-bold text-gray-900">global.css</code>에 스타일 변수 선언하기
+    </>,
+    <>
+      <code className="text-sm font-bold text-gray-900">tailwind.config.ts</code>에 스타일 변수
+      선언하기
+    </>,
+    <>스타일 변수로 컴포넌트에 스타일 작성하기</>,
+    <>
+      <code className="text-sm font-bold text-gray-900">localStorage</code>를 이용해서 테마 저장하기
+    </>,
+  ];
 
-      <div className="relative bg-white px-6 pt-10 pb-10 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
-        <div className="mx-auto max-w-md">
-          <MainContent />
-        </div>
-        <div className="text-base font-semibold leading-7 border-t border-[#e9e9e9e9]">
-          <Buttons />
-          <p className="pt-5">
-            <Link href="/second" className="text-primary">
-              두 번째 페이지로 이동하기 &rarr;
-            </Link>
+  return (
+    <Wrapper>
+      <div className="divide-y divide-gray-300/50">
+        <div className="space-y-8 py-4 text-base leading-7 text-gray-600">
+          <h2 className="text-3xl text-primary">커스텀 테마 3가지 이상 구현하기</h2>
+
+          <CheckList data={textList} />
+
+          <p>
+            아래 버튼을 클릭하여 테마 색상을 변경해 보세요. <br />
+            테마가 변경될 때마다 로컬 스토리지에 지정한 테마가 저장됩니다. <br />
+            새로고침을 하거나 창을 닫고 재접속을 해도 테마가 유지됩니다 :)
           </p>
         </div>
       </div>
-    </div>
+
+      <div className="text-base font-semibold leading-7 border-t border-[#e9e9e9e9]">
+        <Buttons />
+
+        <p className="pt-5">
+          <Link href="/second" className="text-primary">
+            두 번째 페이지로 이동하기 &rarr;
+          </Link>
+        </p>
+      </div>
+    </Wrapper>
   );
 }

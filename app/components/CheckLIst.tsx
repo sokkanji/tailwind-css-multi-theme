@@ -1,23 +1,11 @@
-import React from 'react';
+interface CheckListProps {
+  data: JSX.Element[];
+}
 
-export default function CheckList() {
-  const textList = [
-    <>
-      <code className="text-sm font-bold text-gray-900">global.css</code>에 스타일 변수 선언하기
-    </>,
-    <>
-      <code className="text-sm font-bold text-gray-900">tailwind.config.ts</code>에 스타일 변수
-      선언하기
-    </>,
-    <>스타일 변수로 컴포넌트에 스타일 작성하기</>,
-    <>
-      <code className="text-sm font-bold text-gray-900">localStorage</code>를 이용해서 테마 저장하기
-    </>,
-  ];
-
+export default function CheckList({ data }: CheckListProps) {
   return (
     <ul className="space-y-4">
-      {textList.map((item, i) => {
+      {data.map((item, i) => {
         return (
           <li key={i} className="flex items-center">
             <svg
