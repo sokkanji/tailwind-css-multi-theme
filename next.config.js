@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  basePath: '/tailwind-css-multiple-theme',
+  basePath: '/tailwind-css-multiple-theme-dynamic',
   output: 'export',
 
   webpack: config => {
