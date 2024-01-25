@@ -13,6 +13,7 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
 
   useEffect(function initialize() {
     const storedTheme = localStorage.getItem('theme') ?? '';
+
     setTheme(storedTheme);
 
     if (storedTheme !== '') {
@@ -26,13 +27,14 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
         return;
       }
 
+      document.querySelector('html')?.setAttribute('data-theme', theme);
+
       if (theme === '') {
         localStorage.removeItem('theme');
         return;
       }
 
       localStorage.setItem('theme', theme);
-      document.querySelector('html')?.setAttribute('data-theme', theme);
     },
     [theme],
   );
