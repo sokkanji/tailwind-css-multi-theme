@@ -12,10 +12,9 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
   const [theme, setTheme] = useState<string>('');
 
   useEffect(function initialize() {
-    setTheme(localStorage.getItem('theme') ?? 'blue');
-    document
-      .querySelector('html')
-      ?.setAttribute('data-theme', localStorage.getItem('theme') ?? 'blue');
+    const storedTheme = localStorage.getItem('theme') ?? 'blue';
+    setTheme(storedTheme);
+    document.querySelector('html')?.setAttribute('data-theme', storedTheme);
   }, []);
 
   useEffect(
@@ -30,9 +29,9 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
     [theme],
   );
 
-  return (
-    <ThemeContext.Provider value={{ setTheme }}>
-      {theme === '' ? <Loading /> : children};
-    </ThemeContext.Provider>
-  );
+  if (theme === '') {
+    return <Loading />;
+  }
+
+  return <ThemeContext.Provider value={{ setTheme }}>{children}</ThemeContext.Provider>;
 }

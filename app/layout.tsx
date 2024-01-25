@@ -6,8 +6,8 @@ import ThemeProvider from './provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Multiple theme sample',
-  description: '3가지 이상 테마 적용한 프로젝트 예시',
+  title: 'Multiple theme sample dynamic',
+  description: '동적으로 테마 변경하는 프로젝트 예시',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

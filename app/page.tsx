@@ -14,7 +14,8 @@ export default function MainPage() {
       <code className="text-sm font-bold text-gray-900">tailwind.config.ts</code>에 스타일 변수
       선언하기
     </>,
-    <>스타일 변수로 컴포넌트에 스타일 작성하기</>,
+    <>스타일 변수로 컴포넌트 스타일 작성하기</>,
+    <>테마 변경하는 버튼 이벤트 추가하기</>,
     <>
       <code className="text-sm font-bold text-gray-900">localStorage</code>를 이용해서 테마 저장하기
     </>,
@@ -24,7 +25,7 @@ export default function MainPage() {
     <Wrapper>
       <div className="divide-y divide-gray-300/50">
         <div className="space-y-8 py-4 text-base leading-7 text-gray-600">
-          <h2 className="text-3xl text-primary">커스텀 테마 3가지 이상 구현하기</h2>
+          <h2 className="text-3xl text-primary">멀티 테마 구현하기</h2>
 
           <CheckList data={textList} />
 
